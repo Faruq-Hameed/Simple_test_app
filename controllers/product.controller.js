@@ -1,14 +1,6 @@
 const Product = require("../models/product.model");
 
-/**
- * It's an asynchronous function that uses the await keyword to wait for the result of the find()
- * method on the Product model.
- *
- * The find() method returns a promise, which is why we can use the await keyword.
- * @param req - The request object. This object represents the HTTP request and has properties for the
- * request query string, parameters, body, HTTP headers, and so on.
- * @param res - The response object.
- */
+/**Get all products route */
 const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
@@ -18,12 +10,7 @@ const getProducts = async (req, res) => {
   }
 };
 
-/**
- * It's an asynchronous function that uses the Product model to find a product by its id, and then
- * sends a response with the product's data.
- * @param req - The request object.
- * @param res - The response object.
- */
+/** Get a product*/
 const getProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
