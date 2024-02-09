@@ -1,7 +1,7 @@
 {
   "name": "tutorial",
   "version": "1.0.0",
-  "description": "Tutorial on how to write test for expressjs and mongoose applications",
+  "description": "Tutorial on how to write test for expressJs and mongoose applications",
   "main": "server.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --testTimeout=5000",
