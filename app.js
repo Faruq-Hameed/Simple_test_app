@@ -1,11 +1,18 @@
 const express = require("express");
+const morgan = require("morgan");
+const helmet = require("helmet");
 
 const ProductRoutes = require("./routes/product.route");
 
 const app = express();
 
+
 /* A middleware that parses the body of the request and makes it available in the req.body object. */
 app.use(express.json());
+//logger
+app.use(morgan('dev'))
+//securing http headers
+app.use(helmet())
 
 /* This is the root route. It is used to check if the server is running. */
 app.get("/", (req, res) => {
