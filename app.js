@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
 /* Telling the server to use the routes in the ProductRoutes file. */
 app.use("/api", ProductRoutes);
 
+//handling invalid routes requests
 app.use('*', (req, res)=>{
   res.status(400).send({ message: "Invalid url" });
 })
